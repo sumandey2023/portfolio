@@ -36,7 +36,8 @@ const HeroSection = () => {
                 Let's Talk
               </a>
               <a
-                href="#contact"
+                href="/resume.pdf"
+                download="Suman-Dey-Resume.pdf"
                 className="brutal-btn-outline bg-secondary text-secondary-foreground"
               >
                 Download CV
