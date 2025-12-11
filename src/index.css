@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Neo-Brutalist Color Palette */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    /* Neon Yellow */
+    --primary: 62 100% 49%;
+    --primary-foreground: 0 0% 0%;
+
+    /* Hot Pink */
+    --secondary: 330 100% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 60 5% 96%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 330 100% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 0%;
+    --input: 0 0% 0%;
+    --ring: 62 100% 49%;
+
+    --radius: 0px;
+
+    /* Brutalist specific */
+    --border-thick: 4px;
+    --border-chunky: 8px;
+    --shadow-brutal: 6px 6px 0px 0px hsl(0 0% 0%);
+    --shadow-brutal-lg: 10px 10px 0px 0px hsl(0 0% 0%);
+    --shadow-brutal-pink: 6px 6px 0px 0px hsl(330 100% 60%);
+    --shadow-brutal-yellow: 6px 6px 0px 0px hsl(62 100% 49%);
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 0%;
+    --sidebar-primary: 0 0% 0%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 60 5% 96%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 0 0% 0%;
+    --sidebar-ring: 62 100% 49%;
+  }
+
+  .dark {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 62 100% 49%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 330 100% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 330 100% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 100%;
+    --input: 0 0% 100%;
+    --ring: 62 100% 49%;
+    --shadow-brutal: 6px 6px 0px 0px hsl(0 0% 100%);
+    --shadow-brutal-lg: 10px 10px 0px 0px hsl(0 0% 100%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .brutal-border {
+    @apply border-4 border-foreground;
+  }
+
+  .brutal-border-thick {
+    @apply border-[8px] border-foreground;
+  }
+
+  .brutal-shadow {
+    box-shadow: var(--shadow-brutal);
+  }
+
+  .brutal-shadow-lg {
+    box-shadow: var(--shadow-brutal-lg);
+  }
+
+  .brutal-shadow-pink {
+    box-shadow: var(--shadow-brutal-pink);
+  }
+
+  .brutal-shadow-yellow {
+    box-shadow: var(--shadow-brutal-yellow);
+  }
+
+  .brutal-card {
+    @apply brutal-border brutal-shadow bg-card p-6 transition-transform hover:-translate-y-1;
+  }
+
+  .brutal-btn {
+    @apply brutal-border brutal-shadow px-8 py-4 font-bold text-lg uppercase tracking-wide transition-all;
+    @apply hover:-translate-y-1 hover:translate-x-1 active:translate-y-0 active:translate-x-0;
+    @apply active:shadow-none;
+  }
+
+  .brutal-btn-primary {
+    @apply brutal-btn bg-primary text-primary-foreground;
+  }
+
+  .brutal-btn-secondary {
+    @apply brutal-btn bg-secondary text-secondary-foreground;
+  }
+
+  .brutal-btn-outline {
+    @apply brutal-btn bg-background text-foreground hover:bg-primary;
+  }
+
+  .noise-bg {
+    position: relative;
+  }
+
+  .noise-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-32 px-4 md:px-8;
+  }
+
+  .container-brutal {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .sticky-note {
+    @apply brutal-border p-4 bg-primary rotate-2 brutal-shadow;
+  }
+
+  .sticky-note-pink {
+    @apply brutal-border p-4 bg-secondary text-secondary-foreground -rotate-2 brutal-shadow;
+  }
+
+  .timeline-line {
+    @apply absolute left-6 top-0 bottom-0 w-2 bg-foreground;
+  }
+
+  .timeline-dot {
+    @apply w-6 h-6 bg-primary brutal-border rounded-none absolute left-4 z-10;
+  }
+
+  .sketch-underline {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10'%3E%3Cpath d='M0 8 Q25 2 50 8 T100 8' stroke='%23FF2D92' stroke-width='3' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% 10px;
+    padding-bottom: 8px;
+  }
+}
+
+@layer utilities {
+  .text-stroke {
+    -webkit-text-stroke: 2px hsl(var(--foreground));
+    color: transparent;
+  }
+
+  .rotate-neg-2 {
+    transform: rotate(-2deg);
+  }
+
+  .rotate-neg-1 {
+    transform: rotate(-1deg);
+  }
+
+  .rotate-1 {
+    transform: rotate(1deg);
+  }
+
+  .rotate-2 {
+    transform: rotate(2deg);
+  }
+
+  .rotate-3 {
+    transform: rotate(3deg);
+  }
+}
