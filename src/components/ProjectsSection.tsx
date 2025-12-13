@@ -25,7 +25,7 @@ const projects = [
     title: "E-Commerce Website",
     description:
       "Complete e-commerce solution with product catalog, cart functionality, payment integration, and admin dashboard.",
-    tech: ["MERN Stack", "Stripe", "Redux", "Tailwind"],
+    tech: ["MERN Stack", "Razorpay", "Redux", "Tailwind"],
     icon: ShoppingCart,
     color: "bg-secondary",
     rotate: "-rotate-2",
