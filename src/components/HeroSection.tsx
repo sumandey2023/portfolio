@@ -1,4 +1,4 @@
-import developerIllustration from "@/assets/developer-illustration.png";
+import developerIllustration from "@/assets/suman1.jpg";
 import developer from "@/assets/developer.jpg";
 
 const HeroSection = () => {
