@@ -2,7 +2,7 @@ import { GraduationCap, Briefcase, Bot, Star } from "lucide-react";
 
 const timelineItems = [
   {
-    year: "2022 - Present",
+    year: "2023 - Present",
     title: "BCA 3rd Year",
     subtitle: "CCLMS, MAKAUT",
     description:
@@ -11,7 +11,7 @@ const timelineItems = [
     color: "bg-primary",
   },
   {
-    year: "2023 - Present",
+    year: "2024 - Present",
     title: "Full-Stack Developer",
     subtitle: "Self-Learning & Projects",
     description:
@@ -20,7 +20,7 @@ const timelineItems = [
     color: "bg-secondary",
   },
   {
-    year: "2024",
+    year: "2025 - Present",
     title: "Advanced AI Integration",
     subtitle: "RAG, n8n & AI Agents",
     description:
