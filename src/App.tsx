@@ -3,12 +3,16 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LenisScroll from "./components/ LenisScroll";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Snowfall from "react-snowfall";
 const queryClient = new QueryClient();
 
 const App = () => (
+  <>
+      <LenisScroll />
+
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <div
@@ -37,6 +41,7 @@ const App = () => (
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
+      </>
 );
 
 export default App;
